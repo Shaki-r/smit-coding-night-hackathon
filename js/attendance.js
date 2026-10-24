@@ -1,0 +1,2 @@
+/* Attendance rules shared by HCM Lite pages. Weekends are not counted as absent. */
+(function(g){'use strict';g.HCMAttendance={isWeekend(dateString){const day=new Date(`${dateString}T12:00:00`).getDay();return day===0||day===6},absentCount(employees,records,dateString,approvedLeaves=[]){if(this.isWeekend(dateString))return 0;return employees.filter(u=>!records.some(a=>a.userId===u.id&&a.date===dateString)&&!approvedLeaves.some(l=>l.userId===u.id&&l.status==='Approved'&&l.startDate<=dateString&&l.endDate>=dateString)).length}}})(window);

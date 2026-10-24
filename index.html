@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#3157d5"><title>HCM Lite · Sign in</title>
+  <link rel="stylesheet" href="css/style.css"><script defer src="js/storage.js"></script><script defer src="js/auth.js"></script><script defer src="js/employees.js"></script><script defer src="js/attendance.js"></script><script defer src="js/leave.js"></script><script defer src="js/helper.js"></script><script defer src="js/app.js"></script>
+</head>
+<body class="auth-body">
+  <main class="auth-shell">
+    <section class="auth-brand"><div class="brand-mark">H</div><p class="eyebrow">PEOPLE • ATTENDANCE • PAYROLL</p><h1>HCM Lite</h1><p class="muted-light">A simpler way to manage your workplace.</p><div class="auth-decoration"><span></span><span></span><span></span><span></span><span></span></div></section>
+    <section class="auth-panel">
+      <div class="auth-top"><div><p class="eyebrow" id="auth-eyebrow">WELCOME BACK</p><h2 id="auth-heading">Sign in to your account</h2></div><button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle day and night mode"><span data-theme-icon>☾</span><span data-theme-label>Night mode</span></button></div>
+      <div id="setup-notice" class="notice hidden">First time here? Create your company and administrator account to get started.</div>
+      <form id="setup-form" class="stack-form hidden">
+        <label>Company name<input name="companyName" required maxlength="80" placeholder="Enter company name"></label>
+        <label>Administrator name<input name="name" required maxlength="80" placeholder="Enter your full name"></label>
+        <label>Admin username<input name="username" required minlength="3" maxlength="30" pattern="[A-Za-z0-9_.-]+" autocomplete="username" placeholder="Choose a username (e.g. admin01)"></label>
+        <label>Email address<input name="email" type="email" required autocomplete="email" placeholder="name@company.com"></label>
+        <label>Password<input name="password" type="password" required minlength="6" autocomplete="new-password" placeholder="Create a password (6+ characters)"></label>
+        <button class="btn btn-primary btn-full" type="submit">Create company <span>→</span></button>
+      </form>
+      <form id="login-form" class="stack-form">
+        <label>Email or username<input name="login" type="text" required autocomplete="username" placeholder="Enter your email or username"></label>
+        <label>Password<input name="password" type="password" required autocomplete="current-password" placeholder="Enter your password"></label>
+        <button class="btn btn-primary btn-full" type="submit">Sign in <span>→</span></button>
+      </form>
+      <p id="auth-message" class="form-message" role="status"></p>
+      <div class="auth-foot"><span class="status-dot"></span> Secure sign-in experience <span class="foot-sep">•</span> English interface</div>
+      <p class="tiny-note">Demo application: data is stored in this browser only.</p>
+    </section>
+  </main>
+</body></html>

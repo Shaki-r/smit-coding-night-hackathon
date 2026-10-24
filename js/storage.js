@@ -1,0 +1,2 @@
+/* HCM Lite shared localStorage helpers. No demo records are created. */
+(function(g){'use strict';const keys={company:'hcm_company',users:'hcm_users',attendance:'hcm_attendance',leaves:'hcm_leaves',session:'hcm_session',announcements:'hcm_announcements'};g.HCMStorage={keys,read(key,fallback){try{return JSON.parse(localStorage.getItem(key))??fallback}catch{return fallback}},write(key,value){localStorage.setItem(key,JSON.stringify(value))},remove(key){localStorage.removeItem(key)},clearCompany(){Object.values(keys).forEach(k=>localStorage.removeItem(k))}}})(window);

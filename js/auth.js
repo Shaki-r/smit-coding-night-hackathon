@@ -1,0 +1,2 @@
+/* Authentication helpers used by the HCM Lite browser prototype. */
+(function(g){'use strict';g.HCMAuth={async hashPassword(password){if(g.crypto?.subtle){const digest=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(password));return [...new Uint8Array(digest)].map(n=>n.toString(16).padStart(2,'0')).join('')}let h=2166136261;for(let i=0;i<password.length;i++){h^=password.charCodeAt(i);h=Math.imul(h,16777619)}return `demo-${(h>>>0).toString(16)}`},logout(){localStorage.removeItem('hcm_session');g.location.href='index.html'}}})(window);
